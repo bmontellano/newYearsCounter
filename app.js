@@ -7,6 +7,10 @@ var secondsLeft = (((new Date(2021, 0, 1).getTime() - Date.now()) / 86400000) - 
 var initVar = 0;
 var counter = 0;
 
+if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
+    alert("Let's get this party started")
+}
+
 console.log(.6*60, "minutes");
 
 if(checkTime < 0) {
