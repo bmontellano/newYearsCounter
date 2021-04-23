@@ -90,6 +90,11 @@ const getCameraSelection = async () => {
   cameraOptions.innerHTML = options.join('');
 };
 
+const startStream = async (constraints) => {
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    handleStream(stream);
+  };
+
 play.onclick = () => {
   if (streamStarted) {
     video.play();
@@ -108,10 +113,7 @@ play.onclick = () => {
   }
 };
 
-const startStream = async (constraints) => {
-  const stream = await navigator.mediaDevices.getUserMedia(constraints);
-  handleStream(stream);
-};
+
 
 const handleStream = (stream) => {
   video.srcObject = stream;
