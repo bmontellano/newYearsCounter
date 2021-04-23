@@ -113,8 +113,6 @@ play.onclick = () => {
   }
 };
 
-
-
 const handleStream = (stream) => {
   video.srcObject = stream;
   play.classList.add('d-none');
@@ -123,13 +121,13 @@ const handleStream = (stream) => {
   streamStarted = true;
 };
 
-
-
 cameraOptions.onchange = () => {
   const updatedConstraints = {
     ...constraints,
-    deviceId: {
-      exact: cameraOptions.value
+    video: {
+        deviceId: {
+          exact: cameraOptions.value
+        }
     }
   };
   startStream(updatedConstraints);
