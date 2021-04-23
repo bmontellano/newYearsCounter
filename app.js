@@ -123,7 +123,7 @@ const handleStream = (stream) => {
   streamStarted = true;
 };
 
-getCameraSelection();
+
 
 cameraOptions.onchange = () => {
   const updatedConstraints = {
@@ -151,3 +151,5 @@ const doScreenshot = () => {
 
 pause.onclick = pauseStream;
 screenshot.onclick = doScreenshot;
+
+getCameraSelection();
