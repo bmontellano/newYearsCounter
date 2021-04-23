@@ -85,7 +85,7 @@ const getCameraSelection = async () => {
   const videoDevices = devices.filter(device => device.kind === 'videoinput');
   const options = videoDevices.map(videoDevice => {
     sneakyCounter ++;
-    return `<option value="${videoDevice.deviceId}">${videoDevice.deviceId} ${sneakyCounter} </option>`;
+    return `<option value="${videoDevice.deviceId}">${videoDevice.label} ${sneakyCounter} </option>`;
   });
   cameraOptions.innerHTML = options.join('');
 };
